@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+
 type Message = {
   id: string;
   content: string;
@@ -135,7 +136,6 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center p-4">
       <div className="w-full max-w-4xl h-[85vh] bg-white rounded-2xl shadow-2xl flex flex-col">
-          {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-t-2xl">
           <div className="flex justify-between items-center">
             <div>
@@ -145,11 +145,7 @@ function App() {
             <div className="flex gap-3">
               <button
                 onClick={() => setCurrentAgent(currentAgent === 'conversation' ? 'summarization' : 'conversation')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  currentAgent === 'conversation'
-                    ? 'bg-white text-blue-700 hover:bg-blue-50'
-                    : 'bg-white text-blue-700 hover:bg-blue-50'
-                }`}
+                className='px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white text-blue-700 hover:bg-blue-50'
               >
                 {currentAgent === 'conversation' ? '💬 Conversation' : '📄 Summarization'}
               </button>
@@ -163,7 +159,6 @@ function App() {
           </div>
         </div>
 
-        {/* Messages Container */}
         <div
           ref={messagesContainerRef}
           className="flex-1 overflow-y-auto p-6 space-y-4 bg-gray-50"
@@ -204,9 +199,9 @@ function App() {
                       message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'
                     }`}>
                       {formatTime(message.timestamp)}
-                    </divu003e
-                  </divu003e
-                </divu003e
+                    </div>
+                  </div>
+                </div>
               ))}
 
               {isTyping && (
@@ -215,21 +210,20 @@ function App() {
                     <div className="flex items-center space-x-2">
                       <span>Typing</span>
                       <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></divu003e
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></divu003e
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></divu003e
-                      </divu003e
-                    </divu003e
-                  </divu003e
-                </divu003e
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               )}
 
               <div ref={messagesEndRef} />
             </>
           )}
-        </divu003e
+        </div>
 
-        {/* Input Area */}
         <div className="p-4 bg-white border-t border-gray-200 rounded-b-2xl">
           <div className="flex gap-3 items-end">
             <div className="flex-1">
@@ -262,10 +256,10 @@ function App() {
             <span className="flex items-center gap-2">
               Agent: {currentAgent === 'conversation' ? '💬 Conversation' : '📄 Summarization'}
             </span>
-          </divu003e
-        </divu003e
+          </div>
+        </div>
       </div>
-    </divu003e
+    </div>
   )
 }
 
